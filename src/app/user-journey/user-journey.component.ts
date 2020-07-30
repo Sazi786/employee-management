@@ -26,7 +26,7 @@ export class UserJourneyComponent implements OnInit {
 
 console.log(this.form)
 
-          alert("Finished!!!"+this.form.journeyName); 
+          alert("Finished!!!"+this.form.jName); 
         } 
       },
         {
