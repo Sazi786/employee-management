@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>WeCaast - Audit Scan</title>
+
+</head>
+<body>
+
+
+
+<!-- Content Start -->
+
+<div class="container">
+  <main class="row mt-4 mb-5">
+    <section class="col-xl-8 mb-5 mb-xl-0">
+      <div class="pageHeding">Audit Scan</div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group mb-4">
+           <label>Type Project Name</label>
+            <input type="text" class="form-control" id="projectName" placeholder="">
+          </div>
+        </div>
+      </div>
+      <!-- row End -->
+      <div class="row mb-4">
+        <div class="col-lg-4">
+          <div class="radiotitle mb-2">Type of SCan</div>
+          <section class="imgRadioWrapper">
+            <div>
+              <div class="input-group">
+                <input type="radio" id="radioScan_1" name="selectScanOption" value="1">
+                <label for="radioScan_1">
+                <div class="input-group-prepend"> <em class="radio_imageIcon scanIcon1"> </em> </div>
+                <div class="text-center radioicotxt">URL Based</div>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div class="input-group">
+                <input type="radio" id="radioScan_2" name="selectScanOption" value="2" checked>
+                <label for="radioScan_2">
+                <div class="input-group-prepend"> <em class="radio_imageIcon scanIcon2"> </em> </div>
+                <div class="text-center radioicotxt">File Based</div>
+                </label>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- Col end -->
+        <div class="col-lg-4">
+          <div class="radiotitle mb-2">Extract Tags From</div>
+          <section class="imgRadioWrapper">
+            <div>
+              <div class="input-group">
+                <input type="radio" id="radioTag_1" name="selectTagOption" value="1" checked>
+                <label for="radioTag_1">
+                <div class="input-group-prepend"> <em class="radio_imageIcon tagIcon1"> </em> </div>
+                <div class="text-center radioicotxt">Beacon</div>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div class="input-group">
+                <input type="radio" id="radioTag_2" name="selectTagOption" value="2">
+                <label for="radioTag_2">
+                <div class="input-group-prepend"> <em class="radio_imageIcon tagIcon2"> </em> </div>
+                <div class="text-center radioicotxt">Data Layer</div>
+                </label>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- Col end -->
+        <div class="col-lg-4">
+          <div class="radiotitle mb-2">Page Depth</div>
+          <div class="row">
+            <div class="col sliderLabel">0</div>
+            <div class="col sliderLabel ml-auto text-right">10</div>
+            <div class="col-12 mb-3">
+              <input id="slider" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="6" onchange="funSlider(this)"/>
+            </div>
+            <div class="col-12">
+              <ul class="list-inline sliderCount">
+                <li class="list-inline-item slideNum">1</li>
+                <li class="list-inline-item slideNum">2</li>
+                <li class="list-inline-item slideNum">3</li>
+                <li class="list-inline-item slideNum">4</li>
+                <li class="list-inline-item slideNum">5</li>
+                <li class="list-inline-item slideNum active">6</li>
+                <li class="list-inline-item slideNum" style="display:none;">7</li>
+                <li class="list-inline-item slideNum" style="display:none;">8</li>
+                <li class="list-inline-item slideNum" style="display:none;">9</li>
+                <li class="list-inline-item slideNum" style="display:none;">10</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Col end --> 
+      </div>
+      <!-- row End -->
+      
+      <div class="row">
+        <div class="col-12">
+          <label>Starting Page URL</label>
+        </div>
+        <div class="col-lg-2">
+          <select class="form-control" id="selectURL">
+            <option>http://</option>
+            <option>https://</option>
+          </select>
+        </div>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="txtPageURL">
+        </div>
+      </div><br>
+      <!-- row End -->
+      
+      <!-- <div class="row mb-4">
+        <div class="col-lg-12 mt-5">
+          <div class="form-group">
+            <label>Add Keywords</label>
+            <div class="selectDiv1">
+              <select id="keywordSelect" name="character" class="form-control" multiple="multiple">
+                <option value="Peter">Shopping Cart</option>
+                <option value="Lois">Add to Cart</option>
+                <option value="Chris">Big Sale</option>
+                <option value="Meg">Discount</option>
+                <option value="Stewie">Festival offer</option>
+                <option value="Cleveland">Big Offer</option>
+                <option value="Joe">Add to Favourite</option>
+                <option value="Quagmire">Glwenn Qtuagmire</option>
+                <option value="Evil Monkey">Etgvil Monkey</option>
+                <option value="Herbert">Jiohn Herbert</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- row End -->
+      
+      <div class="row mb-4">
+        <div class="col-lg-12">
+          <div class="radiotitle mb-2">Select Browser</div>
+          <section class="imgRadioWrapper radioForBrowser">
+            <div>
+              <div class="input-group">
+                <input type="radio" id="radioBrowser_1" name="selectBrowser" value="1">
+                <label for="radioBrowser_1">
+                <div class="input-group-prepend"> <em class="radio_imageIcon browserIcon1"> </em> </div>
+                <div class="text-center radioicotxt">Google Chrome</div>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div class="input-group">
+                <input type="radio" id="radioBrowser_2" name="selectBrowser" value="2" checked>
+                <label for="radioBrowser_2">
+                <div class="input-group-prepend"> <em class="radio_imageIcon browserIcon2"> </em> </div>
+                <div class="text-center radioicotxt">Mozilla Firefox</div>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div class="input-group">
+                <input type="radio" id="radioBrowser_3" name="selectBrowser" value="3">
+                <label for="radioBrowser_3">
+                <div class="input-group-prepend"> <em class="radio_imageIcon browserIcon3"> </em> </div>
+                <div class="text-center radioicotxt">Internet Explorer</div>
+                </label>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- Col end --> 
+      </div>
+      <!-- row End -->
+      
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="custom-control custom-checkbox mb-3">
+            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+            <label class="custom-control-label customCheckboxLabel" for="customCheck">Authenticated</label>
+          </div>
+        </div>
+      </div>
+      <!-- row End -->
+      
+      <div class="row buttonWrapper">
+        <div class="col">
+          <button type="button" class="btn btn-primary">Start Scan</button>
+          <div class="d-inline-block orBlock"><span class="">OR</span></div>
+          <button type="button" class="btn btn-outline-info">Schedule Audit</button>
+        </div>
+      </div>
+    </section>
+    <!-- section End -->
+    
+    <section class="col-xl-4">
+      <div class="color_box colorGray border-bottom pb-3 mb-5 mb-xl-4">
+        <div class="mb-2 d-table">
+          <div class="d-table-cell">
+            <div class="border-right pr-2">
+              <div class="blockHeading fontSize13">Search Volume</div>
+              <div class="bignumber">4.3K</div>
+            </div>
+          </div>
+          <div class="d-table-cell">
+            <div class="border-right px-2">
+              <div class="blockHeading fontSize13">Return Rate</div>
+              <div class="bignumber">1.5</div>
+            </div>
+          </div>
+          <div class="d-table-cell">
+            <ul class="topGraphLabel fontSize13 px-2">
+              <li class="greenTxt">With clicks 63%</li>
+              <li class="blackTxt">Without clicks 37%</li>
+            </ul>
+          </div>
+        </div>
+        <div id="topStackChart" style="width: 100%; height: 180px; margin: 0 auto"></div>
+      </div>
+      <!-- color_box End -->
+      
+      <div class="border-bottom pb-4 mb-5 mb-xl-4">
+        <div class="blockHeading mt-3">URL’s by Depth</div>
+        <div id="secondStackChart" style="width: 100%; height: 180px; margin: 0 auto"></div>
+      </div>
+      <!-- End -->
+      
+      <div class="mb-1 mb-xl-0">
+        <div class="blockHeading">Recent URL Searched</div>
+        <ul class="list-group list-group-flush mb-4">
+          <li class="list-group-item">www.dell.com/en-in</li>
+          <li class="list-group-item">www.dellemc.com/hi-in/big-data</li>
+          <li class="list-group-item">www.dell.com/laptops/</li>
+          <li class="list-group-item">www.dellemc.com/hi-in/big-data</li>
+          <li class="list-group-item">www.dellemc.com/hi-in/big-data</li>
+        </ul>
+        <div> <a href="" class="linkWidArrow">View All URL’s</a> </div>
+      </div>
+      <!-- End --> 
+    </section>
+    <!-- section End --> 
+  </main>
+  <!-- main End --> 
+  
+</div>
+<!-- container-fluid End --> 
+
+<!-- Content End --> 
+
+</body>
+</html>

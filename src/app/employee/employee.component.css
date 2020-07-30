@@ -1,0 +1,322 @@
+.form-control {
+    padding: .375rem .3rem;
+    border: 0;
+    border-bottom: 1px solid #b7b7b7;
+    border-radius: 0;
+    font-weight: 600;
+}
+
+.radiotitle, label {
+    font-size: 0.75rem;
+    padding: 0.5rem 0 0.5rem 0;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.imgRadioWrapper {
+    display: flex;
+}
+/* * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+} */
+body {
+    font-family: "Din-Regular", Helvetica, Arial, sans-serif;
+    font-size: 0.875rem;
+    background: #fff;
+    color: #595959;
+    line-height: 1.2rem;
+}
+
+.imgRadioWrapper > div {
+    flex: auto;
+    max-width: 6.5rem;
+}
+
+.imgRadioWrapper input[type="radio"] {
+    display: none;
+}
+
+.imgRadioWrapper .input-group-prepend {
+    margin: 0;
+}
+
+.radioicotxt {
+    font-size: 0.75rem;
+    padding-top: 0.5rem;
+    line-height: 1rem;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+.pageHeding {
+    font-size: 1.5rem;
+    color: #25c9de;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0.5rem 0 2rem 0;
+}
+
+.imgRadioWrapper input[type="radio"]:checked + label {
+    border: 2px solid #25c9de;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.imgRadioWrapper input[type="radio"]:not(:disabled) ~ label {
+    cursor: pointer;
+}
+
+.imgRadioWrapper label {
+    height: 100%;
+    width: 87px;
+    display: block;
+    background: white;
+    border: 2px solid #d6d4d4;
+    border-radius: 0.3rem;
+    padding: 1rem 0.5rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    position: relative;
+}
+
+
+
+.imgRadioWrapper .input-group-prepend {
+    margin: 0;
+}
+.imgRadioWrapper div:hover .scanIcon1, .imgRadioWrapper input[type="radio"]:checked + label div .scanIcon1 {
+    background-position: 15px -42px;
+    opacity: 1;
+}
+.imgRadioWrapper .input-group-prepend .scanIcon1 {
+    background: url(../../assets/img/scanIcon1.png) no-repeat 15px 0;
+    background-size: 60%;
+    opacity: 0.6;
+}
+.imgRadioWrapper .input-group-prepend em {
+    display: inline-block;
+    height: 44px;
+    width: 100%;
+}
+.radio_imageIcon, .radio_imageIcon:hover {
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.imgRadioWrapper input[type="radio"]:checked + label {
+    border: 2px solid #25c9de;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.imgRadioWrapper input[type="radio"]:not(:disabled) ~ label {
+    cursor: pointer;
+}
+
+.imgRadioWrapper div:hover .scanIcon2, .imgRadioWrapper input[type="radio"]:checked + label div .scanIcon2 {
+    background-position: 17px -44px;
+    opacity: 1;
+}
+.imgRadioWrapper .input-group-prepend .scanIcon2 {
+    background: url(../../assets/img/scanIcon2.png) no-repeat 17px 0;
+    background-size: 50%;
+    opacity: 0.6;
+}
+.imgRadioWrapper .input-group-prepend em {
+    display: inline-block;
+    height: 44px;
+    width: 100%;
+}
+.radio_imageIcon, .radio_imageIcon:hover {
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.imgRadioWrapper div:hover .tagIcon1, .imgRadioWrapper input[type="radio"]:checked + label div .tagIcon1 {
+    background-position: 15px -40px;
+    opacity: 1;
+}
+.imgRadioWrapper .input-group-prepend .tagIcon1 {
+    background: url(../../assets/img/tagIcon1.png) no-repeat 15px 5px;
+    background-size: 60%;
+    opacity: 0.6;
+}
+.imgRadioWrapper .input-group-prepend em {
+    display: inline-block;
+    height: 44px;
+    width: 100%;
+}
+.radio_imageIcon, .radio_imageIcon:hover {
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    text-decoration: none;
+}
+
+
+.imgRadioWrapper div:hover .tagIcon2, .imgRadioWrapper input[type="radio"]:checked + label div .tagIcon2 {
+    background-position: 15px -36px;
+    opacity: 1;
+}
+.imgRadioWrapper .input-group-prepend .tagIcon2 {
+    background: url(../../assets/img/tagIcon2.png) no-repeat 15px 8px;
+    background-size: 60%;
+    opacity: 0.6;
+}
+.imgRadioWrapper .input-group-prepend em {
+    display: inline-block;
+    height: 44px;
+    width: 100%;
+}
+.radio_imageIcon, .radio_imageIcon:hover {
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    text-decoration: none;
+}
+
+
+.imgRadioWrapper div:hover .browserIcon1, .imgRadioWrapper input[type="radio"]:checked + label div .browserIcon1 {
+    background-position: 13px -43px;
+    opacity: 1;
+}
+.imgRadioWrapper .input-group-prepend .browserIcon1 {
+    background: url(../../assets/img/browserIcon1.png) no-repeat 13px 0px;
+    background-size: 60%;
+    opacity: 0.6;
+}
+.imgRadioWrapper div:hover .browserIcon2, .imgRadioWrapper input[type="radio"]:checked + label div .browserIcon1 {
+    background-position: 13px -43px;
+    opacity: 1;
+}
+.imgRadioWrapper .input-group-prepend .browserIcon2 {
+    background: url(../../assets/img/browserIcon2.png) no-repeat 13px 2px;
+    background-size: 60%;
+    opacity: 0.6;
+}
+.imgRadioWrapper div:hover .browserIcon3, .imgRadioWrapper input[type="radio"]:checked + label div .browserIcon1 {
+    background-position: 13px -43px;
+    opacity: 1;
+}
+.imgRadioWrapper .input-group-prepend .browserIcon3 {
+    background: url(../../assets/img/browserIcon3.png) no-repeat 13px 0px;
+    background-size: 60%;
+    opacity: 0.6;
+}
+
+#ex1Slider{width: 100%}
+
+#ex1Slider .slider-selection {
+    background: #25c9de;
+}
+.sliderCount li:first-child {
+    margin-left: 0 !important;
+}
+.sliderCount li {
+    background: #f5f5f5;
+    border: 1px solid #25c9de;
+    width: 35px;
+    height: 46px;
+    text-align: center;
+    padding: 0.7rem 0.1rem;
+    margin-left: -26px !important;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: transparent;
+    font-weight: bold;
+}
+
+.sliderCount li.active {
+    background: #25c9de;
+    border: 1px solid #25c9de;
+    color: #fff;
+    margin-right: -10px !important;
+}
+
+/* Button CSS */
+.buttonWrapper .btn-primary:hover {
+    border-color: #9858c1;
+    background: #9858c1;
+}
+.buttonWrapper .btn-primary {
+    border-color: #ba74e8;
+    background: #ba74e8;
+}
+.buttonWrapper .btn {
+    text-transform: uppercase;
+    width: 250px;
+    height: 50px;
+    padding: 0.7rem;
+    font-weight: 600;
+    font-family: 'DIN-Light';
+    font-size: 0.90rem;
+}
+
+.orBlock {
+    text-transform: uppercase;
+    width: 70px;
+    height: 50px;
+    font-weight: 600;
+    font-family: 'DIN-Light';
+    font-size: 0.90rem;
+    text-align: center;
+    position: relative;
+}
+.orBlock {
+    text-transform: uppercase;
+    width: 70px;
+    height: 50px;
+    font-weight: 600;
+    font-family: 'DIN-Light';
+    font-size: 0.90rem;
+    text-align: center;
+    position: relative;
+}
+.orBlock span {
+    background: #fff;
+    height: 20px;
+}
+.orBlock span:before {
+    content: "";
+    height: 28%;
+    position: absolute;
+    right: 50%;
+    top: -16px;
+    border-right: 1px solid #595959;
+}
+.orBlock span:after {
+    content: "";
+    height: 28%;
+    position: absolute;
+    right: 50%;
+    bottom: 15px;
+    border-right: 1px solid #595959;
+}
+.buttonWrapper .btn-outline-info {
+    border-color: #25c9de;
+    color: #25c9de;
+}
+.buttonWrapper .btn {
+    text-transform: uppercase;
+    width: 250px;
+    height: 50px;
+    padding: 0.7rem;
+    font-weight: 600;
+    font-family: 'DIN-Light';
+    font-size: 0.90rem;
+}

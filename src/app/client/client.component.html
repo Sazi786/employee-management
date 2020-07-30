@@ -1,0 +1,137 @@
+<div class="example-container" style="margin-left: 250px;">
+  <form id="accesspanel" action="" name="form" #clientForm="ngForm" (ngSubmit)="clientForm.form.valid"
+    enctype="multipart/form-data" novalidate class="client-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Client Name</mat-label>
+      <input matInput class="form-control" name="clientName" [(ngModel)]="form.clientName" #clientForm="ngModel"
+        (click)="clientNameInvalid == false" [ngClass]="{ 'is-invalid': clientNameInvalid}" required>
+    </mat-form-field>
+    <div>
+      <span *ngIf="clientNameInvalid" style="color: red;">ClientName is required</span>
+    </div>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Domain</mat-label>
+      <input matInput class="form-control" name="clientIndustry" [(ngModel)]="form.clientIndustry" #clientForm="ngModel"
+        (click)="clientIndustryInvalid == false" [ngClass]="{ 'is-invalid': clientIndustryInvalid}" required>
+    </mat-form-field>
+    <div>
+      <span *ngIf="clientIndustryInvalid" style="color: red;">Domain is required</span>
+    </div>
+
+    <br>
+    <!-- <label class="image-upload-container btn btn-bwm">
+        <span>Select Logo</span>&nbsp; -->
+
+    <div class="container row">
+      <div class="col-md-6">
+           <input type="file" id="customFile" (change)="selectFile($event)">
+          <input type="hidden" class="form-control" name="uploadFilePath" [(ngModel)]="form.uploadFilePath"
+          id="uploadFilePath" placeholder="">
+        </div>
+       
+          
+
+
+    </div>
+
+    <div class="container row">
+      <div class="col-md-12">
+        <div *ngIf=message>Select File</div>
+      </div>
+    </div>
+
+    <!-- <input #imageInput type="file" accept="image/*" name="clientLogo" [(ngModel)]="form.clientLogo"> -->
+    <!-- </label> -->
+    <br>
+    <br>
+
+    <mat-radio-group aria-label="Select Status" name="clientActive" [(ngModel)]="form.active">
+      <mat-radio-button for="clientActive" *ngFor="let item of listStatus" [value]="item.value"
+        [checked]="item.checked">{{item.name}}</mat-radio-button>
+    </mat-radio-group>
+    <br><br><br>
+    <div class="example-button-row">
+
+      <button mat-raised-button color="primary" (click)="upload()">Save</button>
+      <button mat-raised-button type="reset" color="primary" style="margin-left: 4px;">Cancel</button>
+
+
+    </div>
+  </form>
+</div>
+<br>
+<!-- <div class="form-group">
+  <div class="alert alert-danger" role="alert" *ngIf=message style="width: 35%;margin-left: 358px;">
+    <span style="color: red; margin-left: 37px;">{{ message }}</span>
+
+  </div>
+</div> -->
+<br><br>
+<div class="example-header">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+  </mat-form-field>
+</div>
+<br>
+<div class="example-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="clientId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Client ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.clientId}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="clientName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Client Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.clientName}} </mat-cell>
+    </ng-container>
+
+    <!-- Domain Column -->
+    <ng-container matColumnDef="clientIndustry">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Domain </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.clientIndustry}} </mat-cell>
+    </ng-container>
+
+    <!-- LOGO Column -->
+    <ng-container matColumnDef="imageUrl">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Logo </mat-header-cell>
+      <mat-cell *matCellDef="let element"> <img src="{{element.clientLogo}}" style="width: 60px;"/></mat-cell>
+
+
+      <!-- <img src="assets/img/weCaast_Logo.png" style="margin-right: 2.5rem;width: 150px;"> 
+      D:\WeCaast_Updated\employee-management\src\assets\icons
+      -->
+    </ng-container>
+
+    <!-- Active Column -->
+    <ng-container matColumnDef="active">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.active}} </mat-cell>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef>Actions </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-icon-button matTooltip="Click to Edit" class="iconbutton" color="primary"
+          (click)="editClient('Update',row)">
+          <mat-icon aria-label="Edit">edit</mat-icon>
+        </button>
+
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"> </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+
+</div>

@@ -1,0 +1,30 @@
+.pageHeding {
+    font-size: 1.5rem;
+    color: #25c9de;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0.5rem 0 2rem 0;
+}
+
+body {
+    font-family: "Din-Regular", Helvetica, Arial, sans-serif;
+    font-size: 0.875rem;
+    background: #fff;
+    color: #595959;
+    line-height: 1.2rem;
+}
+
+
+
+.sw-theme-arrows > ul.step-anchor {
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    padding: 0px;
+    background: transparent;
+    border-radius: 0px 5px 0px 0px;
+    list-style: none;
+    overflow: hidden;
+}
+

@@ -1,0 +1,58 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <img src="assets/img/weCaast_Logo.png" style="margin-right: 2.5rem;width: 150px;">
+      
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarCollapse"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto" >
+          
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="">TagSure</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/eSat">eSat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/WebAssure">WebAssure</a>
+          </li> -->
+         
+
+
+
+
+          
+    
+       
+      <li class="nav-item"  *ngFor="let apps of appdata" value={{apps.featureName}} style="width: max-content;" >
+        <a class="nav-link" href={{apps.servicePath}}> {{apps.featureName}} 
+        </a>
+      </li>
+    
+
+      <!-- <li class="nav-item">
+        <a name ="userName" class="nav-link menu-item dropdown-toggle" [matMenuTriggerFor] = "userMenu" style="cursor: pointer;margin-left: 296px;">{{userName}}</a>
+        <mat-menu #userMenu = "matMenu">
+         
+          <button mat-menu-item (click)="doLogout()">Logout</button>
+           
+        </mat-menu>
+      </li> -->
+
+   
+
+        </ul>
+
+        <ul class="ml-auto navbar-nav">
+          <li class="logoutLink"><a class="nav-link" (click)="doLogout()"><mat-icon>logout</mat-icon></a></li>
+        </ul>
+        
+       
+      </div>
+    </div>
+    </nav>
+    

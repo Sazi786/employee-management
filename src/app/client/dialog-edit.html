@@ -1,0 +1,38 @@
+<!-- dialog-box.component.html -->
+<h1 mat-dialog-title><strong>{{action}} Details</strong></h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        
+        <input placeholder="{{action}} ClientName" name ="clientName" matInput [(ngModel)]="local_data.clientName">
+        
+      </mat-form-field><br>
+     
+  
+  <mat-form-field appearance="fill">
+        
+    <input placeholder="{{action}} clientIndustry" name ="clientIndustry" matInput [(ngModel)]="local_data.clientIndustry">
+    
+  </mat-form-field>
+
+  <br>
+ <div class="col-md-6">
+  <input type="file" id="customFile" (change)="selectFile($event)">
+            <input type="hidden" class="form-control" name="uploadFilePath" [(ngModel)]="local_data.uploadFilePath"
+            id="uploadFilePath" placeholder="">
+        </div>
+       
+ <div>
+   <span><img src="{{local_data.clientLogo}}" style="width: 60px;"></span>     
+   
+</div>   
+ <br>
+  <br>
+  <mat-radio-group aria-label="Select Status" name="active" [(ngModel)]="local_data.active">
+    <mat-radio-button  value="Active">Active</mat-radio-button>
+    <mat-radio-button  value="Inactive">Inactive</mat-radio-button>
+  </mat-radio-group>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

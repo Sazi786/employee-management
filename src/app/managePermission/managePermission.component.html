@@ -1,0 +1,69 @@
+
+<div class="example-container" style="margin-left: 250px;">
+  <form id="accesspanel" action=""  name="form" #f="ngForm" novalidate>
+
+    <mat-form-field>
+      <mat-label>UserName</mat-label>
+      <input matInput name ="userName" [(ngModel)]="userName" disabled>
+    </mat-form-field><br> 
+
+    <mat-form-field>
+      <mat-label>Email Id</mat-label>
+      <input matInput name ="userEmail" [(ngModel)]="userEmail" disabled>
+    </mat-form-field>
+<br>
+
+    <mat-form-field>
+      <mat-label>Application Name</mat-label>
+      <input matInput name ="applicationName" [(ngModel)]="applicationName" disabled>
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <mat-label>Client Name</mat-label>
+      <input matInput name ="clientName" [(ngModel)]="clientName" disabled>
+    </mat-form-field>
+
+  <br>
+  <mat-form-field>
+    <mat-label>Role</mat-label>
+    <input matInput name ="roleName" [(ngModel)]="roleName" disabled>
+  </mat-form-field><br>
+  <br><br>
+
+  
+  </form>
+</div>
+<br>
+<div class="example-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" #mytable matSort>
+  
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+          <ng-container *ngFor="let col of columns" [matColumnDef]="col.columnDef">
+            <mat-header-cell *matHeaderCellDef>{{ col.header }}</mat-header-cell>
+            <mat-cell  *matCellDef="let row">
+              <span *ngIf="!col.isCheckBox">{{ row[col.columnDef]}}</span>
+              
+              <div *ngFor="let _cRow of row.dyRows">
+                <mat-checkbox *ngIf="_cRow.id==col.columnId" [(ngModel)]="_cRow.isChecked"></mat-checkbox>
+              </div>
+
+              
+             </mat-cell>
+           
+          </ng-container>
+
+    
+   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">   </mat-row>
+    </mat-table>
+<br><br>
+    <div class="example-button-row">
+  
+      <button mat-raised-button color="primary" (click)="OnSave()">Save</button>
+      <button mat-raised-button type="reset" color="primary" style="margin-left: 4px;">Cancel</button>
+     
+    
+    </div>

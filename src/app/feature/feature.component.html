@@ -1,0 +1,104 @@
+<div class="example-container" style="margin-left: 250px;">
+    <form id="accesspanel" action=""  name="form"  #featureForm="ngForm" (ngSubmit)="featureForm.form.valid" novalidate class="feature-form">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Select Application</mat-label>
+            <mat-select name="applicationName" [(ngModel)]="form.applicationName" #featureForm="ngModel"
+            (click)="applicationNameInvalid == false" [ngClass]="{ 'is-invalid': applicationNameInvalid}" required>
+              <mat-option *ngFor="let apps of applicationname" value={{apps.applicationName}}>
+                {{apps.applicationName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div>
+            <span *ngIf="applicationNameInvalid" style="color: red;">Please Select Application Name </span>
+        </div><br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Feature Name</mat-label>
+      <input matInput class="form-control" name ="featureName" [(ngModel)]="form.featureName" #featureForm="ngModel"
+      (click)="featureNameInvalid == false" [ngClass]="{ 'is-invalid': featureNameInvalid}" required>
+    </mat-form-field>
+    <div>
+      <span *ngIf="featureNameInvalid" style="color: red;">Please enter Feature Name </span>
+  </div>
+    <br>
+    <br>
+  
+  <mat-radio-group aria-label="Select Status"  name="featureActive" [(ngModel)]="form.active">
+    <mat-radio-button for="featureActive" *ngFor="let item of listStatus" [value]="item.value" [checked]="item.checked">{{item.name}}</mat-radio-button>
+  </mat-radio-group>
+  <br><br><br>
+  <div class="example-button-row">
+  
+    <button mat-raised-button color="primary" (click)="doSaveFeature()">Save</button>
+    <button mat-raised-button type="reset" color="primary" style="margin-left: 4px;">Cancel</button>
+   
+  
+  </div>
+  </form>
+  </div>
+  <div class="form-group">
+    <div class="alert alert-danger" role="alert" *ngIf=message>
+      <span style="color: red; margin-left: 37px;">{{ message }}</span>
+  
+    </div>
+  </div>
+  <br><br>
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+    </mat-form-field>
+  </div>
+  <br>
+  <div class="example-container mat-elevation-z8">
+
+    <mat-table [dataSource]="dataSource" #mytable matSort>
+    
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="featureId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Feature Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.featureId}} </mat-cell>
+      </ng-container>
+    
+       <!-- ApplicationName Column -->
+       <ng-container matColumnDef="applicationName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Application Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.applicationName}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="featureName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Feature Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.featureName}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="active">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.active}} </mat-cell>
+      </ng-container>
+    
+       <!-- Action Column -->
+       <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef>Actions </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-icon-button matTooltip="Click to Edit" class="iconbutton" color="primary" (click)="editFeature('Update',row)">
+              <mat-icon aria-label="Edit">edit</mat-icon>
+            </button>
+         
+        </mat-cell>
+      </ng-container>
+
+    
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">   </mat-row>
+      </mat-table>
+    
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    
+   
+    </div>
+  

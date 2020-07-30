@@ -1,0 +1,245 @@
+<head>
+
+  <title>WeCaast - AuditScan</title>
+
+</head>
+<body>
+
+
+
+  <!-- Content Start -->
+
+  <div class="container">
+
+    <main class="row mt-4 mb-5">
+      <section class="col-xl-8 mb-5 mb-xl-0">
+        <div class="pageHeding">Audit Scan</div>
+        <form name="form" #auditScanForm="ngForm">
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group mb-4">
+                <label>Type Project Name</label>
+                <input type="text" class="form-control" name="projectName" [(ngModel)]="form.projectName"
+                  id="projectName" placeholder="">
+              </div>
+            </div>
+          </div>
+          <!-- row End -->
+          <div class="row mb-4">
+            <div class="col-lg-4">
+              <div class="radiotitle mb-2">Type of SCan</div>
+              <section class="imgRadioWrapper">
+                <div>
+                  <div class="input-group tagoption">
+                    <input type="radio" id="radioScan_1" name="selectScanOption" value="1" [(ngModel)]="form.selectScanOption">
+                    <label for="radioScan_1">
+                      <div class="input-group-prepend"> <em class="radio_imageIcon scanIcon1"> </em> </div>
+                      <div class="text-center radioicotxt">URL Based</div>
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <div class="input-group tagoption">
+                    <input type="radio" id="radioScan_2" name="selectScanOption" value="2" checked [(ngModel)]="form.selectScanOption">
+                    <label for="radioScan_2">
+                      <div class="input-group-prepend"> <em class="radio_imageIcon scanIcon2"> </em> </div>
+                      <div class="text-center radioicotxt">File Based</div>
+                    </label>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <!-- Col end -->
+            <div class="col-lg-4">
+              <div class="radiotitle mb-2">Extract Tags From</div>
+              <section class="imgRadioWrapper">
+                <div>
+                  <div class="input-group tagoption">
+                    <input type="radio" id="radioTag_1" name="selectTagOption" value="1" checked [(ngModel)]="form.selectTagOption">
+                    <label for="radioTag_1">
+                      <div class="input-group-prepend"> <em class="radio_imageIcon tagIcon1"> </em> </div>
+                      <div class="text-center radioicotxt">Beacon</div>
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <div class="input-group tagoption">
+                    <input type="radio" id="radioTag_2" name="selectTagOption" value="2"  [(ngModel)]="form.selectTagOption">
+                    <label for="radioTag_2">
+                      <div class="input-group-prepend"> <em class="radio_imageIcon tagIcon2"> </em> </div>
+                      <div class="text-center radioicotxt">Data Layer</div>
+                    </label>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <!-- Col end -->
+            <div class="col-lg-4">
+              <div class="radiotitle mb-2">Page Depth</div>
+              <div class="row">
+
+
+
+
+
+
+                <div class="col-12 mb-3">
+                  <mat-slider class="custom-range" name="pageDepth" [(ngModel)]="form.pageDepth" thumbLabel
+                    [displayWith]="formatLabel" tickInterval="10" min="0" max="10"></mat-slider>
+
+
+
+                </div>
+                <br><br><br>
+                <div class="col-12 mb-3" style="margin-left: 5px;"> <span style="    font-size: 0.75rem;
+              padding: 0.5rem 0 0.5rem 0;
+              text-transform: uppercase;
+              font-weight: 600;
+          ">Selected Value is :</span>
+                  <br>
+                  <ul class="list-inline sliderCount">
+                    <li class="list-inline-item slideNum active">{{form.pageDepth}}</li>
+
+                  </ul>
+
+                </div>
+
+
+              </div>
+            </div>
+            <!-- Col end -->
+          </div>
+          <!-- row End -->
+
+          <div class="row">
+            <div class="col-12">
+              <label>Starting Page URL</label>
+            </div>
+            <div class="col-lg-2">
+              <select class="form-control" id="selectURL" name="pageUrl" [(ngModel)]="form.pageUrl">
+                <option>http://</option>
+                <option>https://</option>
+              </select>
+            </div>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="txtPageURL" name="txtPageURL" [(ngModel)]="form.txtPageURL">
+            </div>
+          </div><br>
+          <!-- row End -->
+
+          <!-- <div class="row mb-4">
+        <div class="col-lg-12 mt-5">
+          <div class="form-group">
+            <label>Add Keywords</label>
+            <div class="selectDiv1">
+              <select id="keywordSelect" name="character" class="form-control" multiple="multiple">
+                <option value="Peter">Shopping Cart</option>
+                <option value="Lois">Add to Cart</option>
+                <option value="Chris">Big Sale</option>
+                <option value="Meg">Discount</option>
+                <option value="Stewie">Festival offer</option>
+                <option value="Cleveland">Big Offer</option>
+                <option value="Joe">Add to Favourite</option>
+                <option value="Quagmire">Glwenn Qtuagmire</option>
+                <option value="Evil Monkey">Etgvil Monkey</option>
+                <option value="Herbert">Jiohn Herbert</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div> -->
+          <!-- row End -->
+
+          <div class="row mb-4">
+            <div class="col-lg-12">
+              <div class="radiotitle mb-2">Select Browser</div>
+              <mat-radio-group class="imgRadioWrapper radioForBrowser"  name="selectBrowser" >
+                <div>
+                  <div class="input-group">
+                    <input type="radio" id="radioBrowser_1" name="selectBrowser" value="1" checked [(ngModel)]="form.selectBrowser">
+                    <label for="radioBrowser_1">
+                      <div class="input-group-prepend"> <em class="radio_imageIcon browserIcon1"> </em> </div>
+                      <div class="text-center radioicotxt">Google Chrome</div>
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <div class="input-group">
+                    <input type="radio" id="radioBrowser_2" name="selectBrowser" value="2"  [(ngModel)]="form.selectBrowser">
+                    <label for="radioBrowser_2">
+                      <div class="input-group-prepend"> <em class="radio_imageIcon browserIcon2"> </em> </div>
+                      <div class="text-center radioicotxt">Mozilla Firefox</div>
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <div class="input-group">
+                    <input type="radio" id="radioBrowser_3" name="selectBrowser" value="3"  [(ngModel)]="form.selectBrowser">
+                    <label for="radioBrowser_3">
+                      <div class="input-group-prepend"> <em class="radio_imageIcon browserIcon3"> </em> </div>
+                      <div class="text-center radioicotxt">Internet Explorer</div>
+                    </label>
+                  </div>
+                </div>
+              </mat-radio-group>
+            </div>
+            <!-- Col end -->
+          </div>
+          <!-- row End -->
+
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck" name="isAuthenticated" [(ngModel)]="form.isAuthenticated">
+                <label class="custom-control-label customCheckboxLabel" for="customCheck">Authenticated</label>
+              </div>
+            </div>
+          </div>
+          <!-- row End -->
+
+          <input type="file" id="customFile" (change)="selectFile($event)" > 
+          <input type="hidden" class="form-control" name="uploadFilePath" [(ngModel)]="form.uploadFilePath"
+          id="uploadFilePath" placeholder="">
+
+
+        </form>
+        <div class="row buttonWrapper">
+          <div class="col">
+            <button type="button" class="btn btn-primary" (click)="upload()">Start Scan</button>
+            <div class="d-inline-block orBlock"><span class="">OR</span></div>
+            <button type="button" class="btn btn-outline-info">Schedule Audit</button>
+          </div>
+        </div>
+      </section>
+      <!-- section End -->
+
+      <section class="col-xl-4">
+       
+        
+        <div class="mb-1 mb-xl-0">
+          <div class="blockHeading">Recent URL Searched</div>
+          <ul class="list-group list-group-flush mb-4">
+            <li class="list-group-item" *ngFor="let data of searchUrl">{{data}}</li>
+           
+          </ul>
+         <!-- <div> <a href="" class="linkWidArrow">View All URL’s</a> </div>-->
+        </div>
+        <!-- End --> 
+      </section>
+      <!-- section End --> 
+    </main>
+    <!-- main End -->
+
+    <div id="overlay" style="display:none;">
+      <div class="spinner"></div>
+      <br/>
+      Scanning in progress...
+  </div>
+
+  </div>
+  <!-- container-fluid End -->
+  
+  <!-- Content End -->
+<br>
+
+</body>

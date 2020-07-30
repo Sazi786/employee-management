@@ -1,0 +1,26 @@
+<!-- dialog-box.component.html -->
+<h1 mat-dialog-title><strong>{{action}} Details</strong></h1>
+<div mat-dialog-content>
+
+  <mat-form-field>
+    <mat-label>Select Application</mat-label>
+    <mat-select  name="applicationName" [(ngModel)]="local_data.applicationName">
+      <mat-option *ngFor="let apps of drpApplication" value={{apps.applicationName}}>
+        {{apps.applicationName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+    <mat-form-field appearance="fill">
+        
+        <input placeholder="{{action}} featureName" name ="featureName" matInput [(ngModel)]="local_data.featureName">
+        
+      </mat-form-field><br>
+      <mat-radio-group aria-label="Select Status" name="active" [(ngModel)]="local_data.active">
+        <mat-radio-button  value="Active">Active</mat-radio-button>
+        <mat-radio-button  value="Inactive">Inactive</mat-radio-button>
+      </mat-radio-group>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

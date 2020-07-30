@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>Change Password</h1>
+<div mat-dialog-content>
+  <form [formGroup]="registerForm" (ngSubmit)="f.form.valid && onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-5">
+  <mat-form-field>
+    <mat-label>Old Password</mat-label>
+    <input matInput type="password"   formControlName="oldPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.oldPassword.errors }" required>
+    
+    <div *ngIf="submitted && f.oldPassword.errors" class="invalid-feedback">
+      <div *ngIf="f.oldPassword.errors.required">Password is required</div>
+      <div *ngIf="f.oldPassword.errors.minlength">Password must be at least 6 characters</div>
+      
+  </div>
+
+  
+  </mat-form-field></div><br>
+  <div class="form-group col">
+  <mat-form-field>
+    <mat-label>New Password</mat-label>
+    <input matInput type="password"  formControlName="newPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.newPassword.errors }" required>
+    <div *ngIf="submitted && f.newPassword.errors" class="invalid-feedback">
+      <div *ngIf="f.newPassword.errors.required">Password is required</div>
+      <div *ngIf="f.newPassword.errors.minlength">Password must be at least 6 characters</div>
+      <span class="text-danger"
+                                *ngIf="f.newPassword.touched && f.newPassword.errors?.invalidPassword">
+                                Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                                letter and 1 number
+                            </span>
+  </div>
+  
+  </mat-form-field></div><br>
+  <div class="form-group col">
+  <mat-form-field>
+    <mat-label>Confirm Password</mat-label>
+    <input matInput type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"  required>
+    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+      <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+      <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+  </div>
+  
+  </mat-form-field></div>
+</div>
+  </form>
+</div>
+
+<div class="form-group">
+  <div class="alert alert-danger" role="alert" *ngIf=message>
+    <span style="color: red;">{{ message }}</span>
+
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <button class="btn btn-primary mr-1" (click)="onSubmit()">Save</button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+</div>
+
+

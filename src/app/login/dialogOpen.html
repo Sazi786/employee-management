@@ -1,0 +1,16 @@
+<!-- dialog-box.component.html -->
+<h1 mat-dialog-title><strong> Enter Email-ID</strong></h1>
+<form name="form" class="forgotPassword-form">
+<div mat-dialog-content>
+    <mat-form-field>
+        
+        <input  type="email" placeholder="Email-ID"  class=" form-control" name ="emailId" matInput [(ngModel)]="form.emailId" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        
+      </mat-form-field><br><br>
+      
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doSubmit()" mat-flat-button color="primary">Submit</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>
+</form>

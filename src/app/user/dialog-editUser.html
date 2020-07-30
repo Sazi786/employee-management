@@ -1,0 +1,58 @@
+<!-- dialog-box.component.html -->
+<h1 mat-dialog-title><strong>{{action}} Details</strong></h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        
+        <input placeholder="{{action}} UserName" name ="userName" matInput [(ngModel)]="local_data.userName">
+        
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        
+        <input placeholder="{{action}} userFirstName" name ="userFirstName" matInput [(ngModel)]="local_data.userFirstName">
+        
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        
+        <input placeholder="{{action}} empLastName" name ="empLastName" matInput [(ngModel)]="local_data.empLastName">
+        
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+        
+        <input placeholder="{{action}} userEmail" name ="userEmail" matInput [(ngModel)]="local_data.userEmail">
+        
+      </mat-form-field><br>
+
+      <mat-form-field>
+        <mat-label>Select Application</mat-label>
+        <mat-select  name="applicationName" [(ngModel)]="local_data.application" multiple>
+          <mat-option *ngFor="let apps of drpApplication" value={{apps.applicationName}}>
+            {{apps.applicationName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <mat-form-field>
+        <mat-label>Select Client</mat-label>
+        <mat-select  name="clientName" [(ngModel)]="local_data.client" multiple>
+          <mat-option *ngFor="let clients of drpClients" value={{clients.clientName}}>
+            {{clients.clientName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br>
+      <mat-form-field>
+        <mat-label>Select Role</mat-label>
+        <mat-select  name="role" [(ngModel)]="local_data.role" multiple>
+          <mat-option *ngFor="let roles of drpRoles" value={{roles.roleName}}>
+            {{roles.roleName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br>
+      <mat-radio-group aria-label="Select Status" name="active" [(ngModel)]="local_data.active">
+        <mat-radio-button  value="Active">Active</mat-radio-button>
+        <mat-radio-button  value="Inactive">Inactive</mat-radio-button>
+      </mat-radio-group>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

@@ -1,0 +1,91 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+  <img src="assets/img/weCaast_Logo.png" style="margin-right: 2.5rem;width: 150px;">
+    
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+
+
+      
+  
+
+
+
+
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item"  *ngFor="let apps of appdata" value={{apps.applicationName}} style="width: max-content;">
+          <a class="nav-link" href={{apps.servicePath}} (click)="getApp(apps)"> {{apps.applicationName}}
+          </a>
+        </li>
+        
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="wecaast/auditscan/">TagSure</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/eSat">eSat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/WebAssure">WebAssure</a>
+        </li> -->
+        <li class="nav-item dropdown" *ngIf="showMenu" style="width: max-content;">
+          <a class="nav-link menu-item dropdown-toggle" [matMenuTriggerFor] = "menu" style="cursor:pointer;">Configuration</a>
+          
+          <mat-menu #menu = "matMenu">
+            <button mat-menu-item [matMenuTriggerFor] = "role">Role</button>
+            <button mat-menu-item [matMenuTriggerFor] = "user">User</button>
+             <button mat-menu-item  [matMenuTriggerFor] = "application">Application</button>
+             <button mat-menu-item  [matMenuTriggerFor] = "feature">Feature</button>
+             <button mat-menu-item [matMenuTriggerFor] = "client">Client</button>
+          </mat-menu>
+          <mat-menu #user = "matMenu">
+            <button mat-menu-item  [routerLink]="['/wecaast/user/adduser']">Add/Edit User</button>
+            
+         </mat-menu>
+          <mat-menu #application = "matMenu">
+            <button mat-menu-item [routerLink]="['/wecaast/user/application']">Add/Edit Application</button>
+            
+         </mat-menu>
+         <mat-menu #feature = "matMenu">
+          <button mat-menu-item [routerLink]="['/wecaast/user/feature']">Add/Edit Feature</button>
+          
+       </mat-menu>
+
+         <mat-menu #client = "matMenu">
+          <button mat-menu-item [routerLink]="['/wecaast/user/client']">Add/Edit Client</button>
+          
+       </mat-menu>
+          <mat-menu #role = "matMenu">
+            
+             <button mat-menu-item [routerLink]="['/wecaast/user/role']">Add/Edit Role</button>
+            
+          </mat-menu>
+          
+          </li>         
+                    
+          <li class="nav-item">
+            <a name ="username" class="nav-link menu-item dropdown-toggle" [matMenuTriggerFor] = "userMenu" style="cursor: pointer;margin-left: 450px;">{{username}}</a>
+            <mat-menu #userMenu = "matMenu">
+              <button mat-menu-item (click)="doChangePassword()">Change Password</button>
+              <button mat-menu-item (click)="doLogout()">Logout</button>
+               
+            </mat-menu>
+          </li>
+      </ul>
+<div>
+
+
+  
+
+
+</div>
+
+
+
+</div> 
+</div>
+  </nav>

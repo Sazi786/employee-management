@@ -1,0 +1,99 @@
+<div class="example-container" style="margin-left: 250px;">
+  <form id="accesspanel" action=""  name="form" #roleForm="ngForm" (ngSubmit)="roleForm.form.valid && onSubmit(roleForm)" novalidate class="role-form">
+    <div class="form-group">
+    <mat-form-field class="example-full-width">
+    <mat-label>Role Name</mat-label>
+    <input matInput class="form-control" name ="roleName" [(ngModel)]="form.roleName" #roleName="ngModel"
+    (click)="roleNameInvalid == false" [ngClass]="{ 'is-invalid': roleNameInvalid}" required>
+  </mat-form-field>
+  <div>
+    <span *ngIf="roleNameInvalid" style="color: red;">Name is required</span>
+</div>
+
+ 
+  </div>
+  
+<mat-radio-group aria-label="Select Status" name="roleActive" [(ngModel)]="form.active">
+  <mat-radio-button for="roleActive" *ngFor="let item of listStatus" [value]="item.value" [checked]="item.checked">{{item.name}}</mat-radio-button>
+ 
+</mat-radio-group>
+<br><br><br>
+<div class="example-button-row">
+
+  <button mat-raised-button color="primary" (click)="doSaveRole()">Save</button>
+  <button mat-raised-button type="reset" color="primary" style="margin-left: 4px;">Cancel</button>
+ 
+
+</div>
+</form>
+</div>
+
+
+
+<br><br>
+
+
+<div class="form-group">
+  <div class="alert alert-danger" role="alert" *ngIf=message>
+    <span style="color: red; margin-left: 37px;">{{ message }}</span>
+
+  </div>
+</div>
+     
+
+       
+  
+     
+
+<br><br>
+
+<div class="example-header">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+  </mat-form-field>
+</div>
+<br>
+<div class="example-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" #mytable matSort>
+  
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="roleId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Role Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.roleId}} </mat-cell>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="roleName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Role Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.roleName}} </mat-cell>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="active">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.active}} </mat-cell>
+    </ng-container>
+  
+     <!-- Action Column -->
+     <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef>Actions </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-icon-button matTooltip="Click to Edit" class="iconbutton" color="primary" (click)="editValue('Update',row)">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+       
+      </mat-cell>
+    </ng-container>
+    
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">   </mat-row>
+    </mat-table>
+  
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  
+ 
+  </div>
